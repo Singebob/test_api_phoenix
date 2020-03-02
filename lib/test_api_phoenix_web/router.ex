@@ -7,5 +7,6 @@ defmodule TestApiPhoenixWeb.Router do
 
   scope "/api", TestApiPhoenixWeb do
     pipe_through :api
+    resources "/user", UserController, except: [:new, :edit]
   end
 end

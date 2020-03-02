@@ -40,7 +40,9 @@ defmodule TestApiPhoenix.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:earmark, "~> 1.2", only: :dev},
+      {:ex_doc, "~> 0.19", only: :dev}
     ]
   end
 
@@ -54,7 +56,7 @@ defmodule TestApiPhoenix.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      # test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end
